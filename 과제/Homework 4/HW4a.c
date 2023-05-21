@@ -8,8 +8,8 @@
 int stops[MAX_RIDERS]; //floor that each passenger gets off
 int nriders; //num of riders
 int nstops; //num of allowed stops
-int MAXINT = 100000;
-int count = 0;
+int MAXINT = 100000; //a decently sized maxint
+int count = 0; //
 
 int m[NFLOORS + 1][MAX_RIDERS]; //dynamic programming cost table
 int p[NFLOORS + 1][MAX_RIDERS]; //dynamic programming parent table
@@ -63,7 +63,7 @@ int optimize_floors()
 				{
 					m[i][j] = cost;
 					p[i][j] = k;
-				}
+				} 
 			}
 		}
 	}
@@ -109,7 +109,7 @@ int main()
 	
 	for(int i = 0; i < nriders; i++)
 	{
-		int temp_min = 100000;
+		int temp_min = MAXINT;
 		int temp_floor;
 		for(int j = 0; j < nstops; j++)
 		{
